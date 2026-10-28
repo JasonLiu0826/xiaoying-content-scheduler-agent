@@ -1,0 +1,4 @@
+{
+  "requestId": "missing-001",
+  "items": [{ "materialId": "M02", "channel": "xiaohongshu", "requestedAt": "2026-11-01T18:00:00+08:00", "hardTime": true }]
+}

@@ -1,0 +1,162 @@
+{
+  "requestId": "conflict-001",
+  "taskStatus": "needs_confirmation",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "douyin",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "approved",
+      "risks": [],
+      "missingFields": [],
+      "suggestedAt": "2026-11-01T19:00:00+08:00",
+      "pendingConfirmations": [
+        "Confirm M01 on douyin: 2026-11-01T18:00:00+08:00 → 2026-11-01T19:00:00+08:00"
+      ],
+      "draft": {
+        "id": "5ac2d5a2-1037-4f8d-944d-e6d8f6810d39",
+        "materialId": "M01",
+        "channel": "douyin",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "suggestedAt": "2026-11-01T19:00:00+08:00",
+        "status": "pending_confirmation"
+      },
+      "saveStatus": "saved",
+      "status": "needs_confirmation",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "live",
+    "name": "deepseek-flash",
+    "steps": 5,
+    "httpAttempts": 5
+  },
+  "toolCalls": 5,
+  "startedAt": "2026-10-28T09:24:39.004Z",
+  "finishedAt": "2026-10-28T09:24:44.086Z",
+  "trace": [
+    {
+      "step": 1,
+      "modelStep": 1,
+      "action": "read_material",
+      "arguments": {
+        "materialId": "M01",
+        "reason": "读取 M01 素材事实与缺失字段，作为审核起点"
+      },
+      "reason": "读取 M01 素材事实与缺失字段，作为审核起点",
+      "observation": {
+        "ok": true,
+        "data": {
+          "material": {
+            "id": "M01",
+            "title": "城市夜景短片",
+            "description": "合成素材：记录城市夜景与剪辑技巧。",
+            "rights": "owned"
+          }
+        }
+      },
+      "nextAction": "check_rules"
+    },
+    {
+      "step": 2,
+      "modelStep": 2,
+      "action": "check_rules",
+      "arguments": {
+        "materialId": "M01",
+        "reason": "素材事实已读取，按当前规则检查合规性"
+      },
+      "reason": "素材事实已读取，按当前规则检查合规性",
+      "observation": {
+        "ok": true,
+        "data": {
+          "materialId": "M01",
+          "status": "approved",
+          "missingFields": [],
+          "risks": []
+        }
+      },
+      "nextAction": "query_slots"
+    },
+    {
+      "step": 3,
+      "modelStep": 3,
+      "action": "query_slots",
+      "arguments": {
+        "materialId": "M01",
+        "reason": "审核通过，查询原时段 2026-11-01T18:00+08:00 及替代时段可用性"
+      },
+      "reason": "审核通过，查询原时段 2026-11-01T18:00+08:00 及替代时段可用性",
+      "observation": {
+        "ok": true,
+        "data": {
+          "materialId": "M01",
+          "requestedAt": "2026-11-01T18:00:00+08:00",
+          "requestedAvailable": false,
+          "slots": [
+            {
+              "at": "2026-11-01T18:00:00+08:00",
+              "available": false
+            },
+            {
+              "at": "2026-11-01T19:00:00+08:00",
+              "available": true
+            },
+            {
+              "at": "2026-11-01T20:00:00+08:00",
+              "available": true
+            },
+            {
+              "at": "2026-11-01T21:00:00+08:00",
+              "available": true
+            }
+          ]
+        }
+      },
+      "nextAction": "save_draft"
+    },
+    {
+      "step": 4,
+      "modelStep": 4,
+      "action": "save_draft",
+      "arguments": {
+        "materialId": "M01",
+        "reason": "原时段 18:00 不可用，hardTime=true 且无人工确认，选择最早可用替代时段 19:00 保存为待确认草稿",
+        "suggestedAt": "2026-11-01T19:00:00+08:00"
+      },
+      "reason": "原时段 18:00 不可用，hardTime=true 且无人工确认，选择最早可用替代时段 19:00 保存为待确认草稿",
+      "observation": {
+        "ok": true,
+        "data": {
+          "draft": {
+            "id": "5ac2d5a2-1037-4f8d-944d-e6d8f6810d39",
+            "materialId": "M01",
+            "channel": "douyin",
+            "requestedAt": "2026-11-01T18:00:00+08:00",
+            "suggestedAt": "2026-11-01T19:00:00+08:00",
+            "status": "pending_confirmation"
+          },
+          "duplicate": false
+        }
+      },
+      "nextAction": "finish"
+    },
+    {
+      "step": 5,
+      "modelStep": 5,
+      "action": "finish",
+      "arguments": {
+        "reason": "M01 审核通过；原时段 18:00 不可用，hardTime=true 且 confirmations 为空，已按最早可用替代时段 19:00 保存为待确认草稿（pending_confirmation），未发布，需人工确认时段。"
+      },
+      "reason": "M01 审核通过；原时段 18:00 不可用，hardTime=true 且 confirmations 为空，已按最早可用替代时段 19:00 保存为待确认草稿（pending_confirmation），未发布，需人工确认时段。",
+      "observation": {
+        "ok": true,
+        "data": {
+          "statusFromLedger": "needs_confirmation"
+        }
+      },
+      "nextAction": "end"
+    }
+  ]
+}
