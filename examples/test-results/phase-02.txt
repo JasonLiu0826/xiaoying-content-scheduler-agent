@@ -1,0 +1,40 @@
+✔ request defaults hardTime and accepts timestamps with explicit offsets (9.3863ms)
+✔ request rejects absent offsets, impossible dates, duplicate material IDs and unknown fields (1.6976ms)
+✔ confirmation and catalog timestamps receive the same strict validation (2.0593ms)
+✔ whole seconds and up to three fractional digits are represented without precision loss (0.2884ms)
+✔ submillisecond precision is rejected in request, confirmation and every catalog timestamp (2.3878ms)
+(node:76688) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ normal request saves approved original time with a durable receipt (20.6796ms)
+✔ missing metadata identifies fields and prevents saving (3.4283ms)
+✔ rule risks include matching evidence and rule ID and cannot be bypassed (3.3996ms)
+✔ unknown materials stay needs_input and cannot save (1.6544ms)
+✔ occupied original time gives an alternative pending confirmation without reserving it (3.7713ms)
+✔ exact user confirmation accepts equivalent timestamp instants (3.592ms)
+✔ forged confirmation and rewritten channel/time arguments are rejected (3.3229ms)
+✔ save requires successful read, review and slot query (2.9379ms)
+✔ confirmation must bind item, channel, original and suggestion exactly (7.5421ms)
+✔ non-hard time allows a confirmed alternative and off-catalog suggestions are rejected (3.1931ms)
+✔ replay across reopen returns one stable ID and conflicting request input is rejected (41.8276ms)
+✔ confirmation upgrades pending draft in place and replay cannot downgrade it (5.2517ms)
+✔ save fault inserts nothing and success recovery retains explicit failure history (2.2086ms)
+✔ save rechecks occupied catalog entries after query (2.0567ms)
+✔ save rechecks review rules after earlier approval (2.3184ms)
+✔ confirmed slot uniqueness works across connections and canonical timestamps (39.2667ms)
+✔ multiple items retain partial successful results (17.9205ms)
+✔ unknown tool, unknown request item and invalid input return structured errors (1.9625ms)
+✔ no available candidate slot is an explicit needs_input outcome and can recover after requery (1.7861ms)
+✔ user confirmation input cannot be changed by mutating the original request (1.7881ms)
+✔ read/check/query failure is explicit and retry recovery preserves history (3.6357ms)
+✔ manual-review rule cannot save and includes reason in pending confirmations (1.9549ms)
+✔ rechecking rules preserves outstanding consent on a pending draft (1.893ms)
+✔ database uniqueness constraint protects confirmed times even with a raw second writer (41.9968ms)
+✔ confirmed draft replay cannot silently return a different unvalidated suggestion (2.6206ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 962.5682
