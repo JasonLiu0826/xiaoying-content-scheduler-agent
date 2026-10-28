@@ -1,0 +1,8 @@
+{
+  "requestId": "multi-001",
+  "items": [
+    { "materialId": "M01", "channel": "xiaohongshu", "requestedAt": "2026-11-01T18:00:00+08:00", "hardTime": true },
+    { "materialId": "M02", "channel": "xiaohongshu", "requestedAt": "2026-11-01T19:00:00+08:00", "hardTime": true },
+    { "materialId": "M03", "channel": "xiaohongshu", "requestedAt": "2026-11-01T20:00:00+08:00", "hardTime": true }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "requestId": "normal-001",
+  "taskStatus": "completed",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "approved",
+      "risks": [],
+      "missingFields": [],
+      "suggestedAt": "2026-11-01T18:00:00+08:00",
+      "pendingConfirmations": [],
+      "draft": {
+        "id": "2012156c-a889-4a81-b298-fb16a2bddbbf",
+        "materialId": "M01",
+        "channel": "xiaohongshu",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "suggestedAt": "2026-11-01T18:00:00+08:00",
+        "status": "confirmed"
+      },
+      "saveStatus": "saved",
+      "status": "draft_saved",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "live",
+    "name": "deepseek-flash",
+    "steps": 5,
+    "httpAttempts": 5
+  },
+  "toolCalls": 5,
+  "startedAt": "2026-10-28T09:24:38.931Z",
+  "finishedAt": "2026-10-28T09:24:44.081Z",
+  "trace": [
+    {
+      "step": 1,
+      "modelStep": 1,
+      "action": "read_material",
+      "arguments": {
+        "materialId": "M01",
+        "reason": "读取 M01 素材事实与缺失字段，作为审核起点"
+      },
+      "reason": "读取 M01 素材事实与缺失字段，作为审核起点",
+      "observation": {
+        "ok": true,
+        "data": {
+          "material": {
+            "id": "M01",
+            "title": "城市夜景短片",
+            "description": "合成素材：记录城市夜景与剪辑技巧。",
+            "rights": "owned"
+          }
+        }
+      },
+      "nextAction": "check_rules"
+    },
+    {
+      "step": 2,
+      "modelStep": 2,
+      "action": "check_rules",
+      "arguments": {
+        "materialId": "M01",
+        "reason": "素材事实已读取，按当前规则检查合规性"
+      },
+      "reason": "素材事实已读取，按当前规则检查合规性",
+      "observation": {
+        "ok": true,
+        "data": {
+          "materialId": "M01",
+          "status": "approved",
+          "missingFields": [],
+          "risks": []
+        }
+      },
+      "nextAction": "query_slots"
+    },
+    {
+      "step": 3,
+      "modelStep": 3,
+      "action": "query_slots",
+      "arguments": {
+        "materialId": "M01",
+        "reason": "审核通过，查询原时段 2026-11-01T18:00:00+08:00 及替代时段可用性"
+      },
+      "reason": "审核通过，查询原时段 2026-11-01T18:00:00+08:00 及替代时段可用性",
+      "observation": {
+        "ok": true,
+        "data": {
+          "materialId": "M01",
+          "requestedAt": "2026-11-01T18:00:00+08:00",
+          "requestedAvailable": true,
+          "slots": [
+            {
+              "at": "2026-11-01T18:00:00+08:00",
+              "available": true
+            },
+            {
+              "at": "2026-11-01T19:00:00+08:00",
+              "available": true
+            },
+            {
+              "at": "2026-11-01T20:00:00+08:00",
+              "available": true
+            },
+            {
+              "at": "2026-11-01T21:00:00+08:00",
+              "available": true
+            }
+          ]
+        }
+      },
+      "nextAction": "save_draft"
+    },
+    {
+      "step": 4,
+      "modelStep": 4,
+      "action": "save_draft",
+      "arguments": {
+        "materialId": "M01",
+        "reason": "审核通过且原时段可用，按原时间保存草稿",
+        "suggestedAt": "2026-11-01T18:00:00+08:00"
+      },
+      "reason": "审核通过且原时段可用，按原时间保存草稿",
+      "observation": {
+        "ok": true,
+        "data": {
+          "draft": {
+            "id": "2012156c-a889-4a81-b298-fb16a2bddbbf",
+            "materialId": "M01",
+            "channel": "xiaohongshu",
+            "requestedAt": "2026-11-01T18:00:00+08:00",
+            "suggestedAt": "2026-11-01T18:00:00+08:00",
+            "status": "confirmed"
+          },
+          "duplicate": false
+        }
+      },
+      "nextAction": "finish"
+    },
+    {
+      "step": 5,
+      "modelStep": 5,
+      "action": "finish",
+      "arguments": {
+        "reason": "M01 审核通过、原时段可用，已按原时间保存草稿（未发布）"
+      },
+      "reason": "M01 审核通过、原时段可用，已按原时间保存草稿（未发布）",
+      "observation": {
+        "ok": true,
+        "data": {
+          "statusFromLedger": "completed"
+        }
+      },
+      "nextAction": "end"
+    }
+  ]
+}
