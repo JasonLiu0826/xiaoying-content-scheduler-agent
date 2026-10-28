@@ -1,0 +1,62 @@
+[
+  {
+    "step": 1,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M02",
+      "reason": "离线模拟：先获取素材事实"
+    },
+    "reason": "离线模拟：先获取素材事实",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M02",
+          "description": "合成素材：尚待完善授权与标题的信息。",
+          "rights": "unknown"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 2,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M02",
+      "reason": "离线模拟：检查素材完整性与规则风险"
+    },
+    "reason": "离线模拟：检查素材完整性与规则风险",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M02",
+        "status": "missing_info",
+        "missingFields": [
+          "title",
+          "rights"
+        ],
+        "risks": []
+      }
+    },
+    "nextAction": "finish"
+  },
+  {
+    "step": 3,
+    "modelStep": 3,
+    "action": "finish",
+    "arguments": {
+      "reason": "离线模拟：已处理所有素材，按实际保存回执、缺口或失败结束"
+    },
+    "reason": "离线模拟：已处理所有素材，按实际保存回执、缺口或失败结束",
+    "observation": {
+      "ok": true,
+      "data": {
+        "statusFromLedger": "needs_input"
+      }
+    },
+    "nextAction": "end"
+  }
+]

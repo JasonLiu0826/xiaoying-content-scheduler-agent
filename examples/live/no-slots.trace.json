@@ -1,0 +1,97 @@
+[
+  {
+    "step": 1,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "读取 M01 素材事实与缺失字段，作为审核起点"
+    },
+    "reason": "读取 M01 素材事实与缺失字段，作为审核起点",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M01",
+          "title": "城市夜景短片",
+          "description": "合成素材：记录城市夜景与剪辑技巧。",
+          "rights": "owned"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 2,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "素材事实已读取，按当前规则检查合规性"
+    },
+    "reason": "素材事实已读取，按当前规则检查合规性",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M01",
+        "status": "approved",
+        "missingFields": [],
+        "risks": []
+      }
+    },
+    "nextAction": "query_slots"
+  },
+  {
+    "step": 3,
+    "modelStep": 3,
+    "action": "query_slots",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "审核通过，查询原时段 2026-11-01T18:00+08:00 及替代时段可用性"
+    },
+    "reason": "审核通过，查询原时段 2026-11-01T18:00+08:00 及替代时段可用性",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M01",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "requestedAvailable": false,
+        "slots": [
+          {
+            "at": "2026-11-01T18:00:00+08:00",
+            "available": false
+          },
+          {
+            "at": "2026-11-01T19:00:00+08:00",
+            "available": false
+          },
+          {
+            "at": "2026-11-01T20:00:00+08:00",
+            "available": false
+          },
+          {
+            "at": "2026-11-01T21:00:00+08:00",
+            "available": false
+          }
+        ]
+      }
+    },
+    "nextAction": "finish"
+  },
+  {
+    "step": 4,
+    "modelStep": 4,
+    "action": "finish",
+    "arguments": {
+      "reason": "M01 审核通过，但原时段 2026-11-01T18:00+08:00 及全部替代时段（19:00、20:00、21:00）均不可用，无可行时段，未保存草稿。"
+    },
+    "reason": "M01 审核通过，但原时段 2026-11-01T18:00+08:00 及全部替代时段（19:00、20:00、21:00）均不可用，无可行时段，未保存草稿。",
+    "observation": {
+      "ok": true,
+      "data": {
+        "statusFromLedger": "needs_input"
+      }
+    },
+    "nextAction": "end"
+  }
+]

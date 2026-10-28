@@ -1,0 +1,11 @@
+{
+  "expected": "blocked",
+  "passed": true,
+  "faults": {},
+  "maxSteps": 16,
+  "draftCount": 0,
+  "drafts": [],
+  "inputSha256": "429fc78486ef5a9da6731d3c52e617c0c3fadbf709b8117b6319d90af38d42a0",
+  "catalogSha256": "ecdf895a54474c1233d4df704ed89839c29038f4f7d8d69fbc6e11b4c840c2e5",
+  "databaseGroup": "risk"
+}

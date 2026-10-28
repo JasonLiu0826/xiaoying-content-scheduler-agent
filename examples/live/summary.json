@@ -1,0 +1,113 @@
+{
+  "mode": "live",
+  "model": "deepseek-flash",
+  "sourceCommit": "f985cdfda955cbe4c148d92394690c6921654f6c",
+  "sourceDirty": false,
+  "startedAt": "2026-10-28T09:40:51.841Z",
+  "finishedAt": "2026-10-28T09:41:42.154Z",
+  "cases": 11,
+  "passed": 11,
+  "failed": 0,
+  "results": [
+    {
+      "name": "normal",
+      "expected": "completed",
+      "actual": "completed",
+      "passed": true,
+      "modelSteps": 5,
+      "toolCalls": 5,
+      "draftCount": 1
+    },
+    {
+      "name": "duplicate",
+      "expected": "completed",
+      "actual": "completed",
+      "passed": true,
+      "modelSteps": 5,
+      "toolCalls": 5,
+      "draftCount": 1
+    },
+    {
+      "name": "conflict",
+      "expected": "needs_confirmation",
+      "actual": "needs_confirmation",
+      "passed": true,
+      "modelSteps": 5,
+      "toolCalls": 5,
+      "draftCount": 1
+    },
+    {
+      "name": "confirmed",
+      "expected": "completed",
+      "actual": "completed",
+      "passed": true,
+      "modelSteps": 5,
+      "toolCalls": 5,
+      "draftCount": 1
+    },
+    {
+      "name": "changed-occupancy",
+      "expected": "completed",
+      "actual": "completed",
+      "passed": true,
+      "modelSteps": 5,
+      "toolCalls": 5,
+      "draftCount": 1
+    },
+    {
+      "name": "missing",
+      "expected": "needs_input",
+      "actual": "needs_input",
+      "passed": true,
+      "modelSteps": 3,
+      "toolCalls": 3,
+      "draftCount": 0
+    },
+    {
+      "name": "risk",
+      "expected": "blocked",
+      "actual": "blocked",
+      "passed": true,
+      "modelSteps": 3,
+      "toolCalls": 3,
+      "draftCount": 0
+    },
+    {
+      "name": "save-failure",
+      "expected": "failed",
+      "actual": "failed",
+      "passed": true,
+      "modelSteps": 6,
+      "toolCalls": 6,
+      "draftCount": 0
+    },
+    {
+      "name": "multi",
+      "expected": "blocked",
+      "actual": "blocked",
+      "passed": true,
+      "modelSteps": 5,
+      "toolCalls": 9,
+      "draftCount": 1
+    },
+    {
+      "name": "no-slots",
+      "expected": "needs_input",
+      "actual": "needs_input",
+      "passed": true,
+      "modelSteps": 4,
+      "toolCalls": 4,
+      "draftCount": 0
+    },
+    {
+      "name": "step-limit",
+      "expected": "incomplete",
+      "actual": "incomplete",
+      "passed": true,
+      "modelSteps": 1,
+      "toolCalls": 1,
+      "draftCount": 0
+    }
+  ],
+  "evidenceBoundary": "Actual provider tool calls with synthetic local business tools. This is a small fixed test set, not a general success-rate estimate."
+}

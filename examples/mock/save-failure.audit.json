@@ -1,0 +1,13 @@
+{
+  "expected": "failed",
+  "passed": true,
+  "faults": {
+    "save_draft": 100
+  },
+  "maxSteps": 16,
+  "draftCount": 0,
+  "drafts": [],
+  "inputSha256": "76ea353d0c4b11f4b46976958342e6ee0beeaac331f29ac62bcec11385756e91",
+  "catalogSha256": "ecdf895a54474c1233d4df704ed89839c29038f4f7d8d69fbc6e11b4c840c2e5",
+  "databaseGroup": "save-failure"
+}

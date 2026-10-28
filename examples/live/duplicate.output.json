@@ -1,0 +1,37 @@
+{
+  "requestId": "normal-001",
+  "taskStatus": "completed",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "approved",
+      "risks": [],
+      "missingFields": [],
+      "suggestedAt": "2026-11-01T18:00:00+08:00",
+      "pendingConfirmations": [],
+      "draft": {
+        "id": "a12839cb-5ecb-449a-a591-a4adcf5657cf",
+        "materialId": "M01",
+        "channel": "xiaohongshu",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "suggestedAt": "2026-11-01T18:00:00+08:00",
+        "status": "confirmed"
+      },
+      "saveStatus": "saved",
+      "status": "draft_saved",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "live",
+    "name": "deepseek-flash",
+    "steps": 5,
+    "httpAttempts": 5
+  },
+  "toolCalls": 5,
+  "startedAt": "2026-10-28T09:40:57.692Z",
+  "finishedAt": "2026-10-28T09:41:02.903Z"
+}

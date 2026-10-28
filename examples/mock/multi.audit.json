@@ -1,0 +1,20 @@
+{
+  "expected": "blocked",
+  "passed": true,
+  "faults": {},
+  "maxSteps": 16,
+  "draftCount": 1,
+  "drafts": [
+    {
+      "id": "8a948795-805f-4639-a601-6e59eaeeb628",
+      "materialId": "M01",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "suggestedAt": "2026-11-01T18:00:00+08:00",
+      "status": "confirmed"
+    }
+  ],
+  "inputSha256": "16053634e20e18c7668a07a01b581c8a6dffb0ec85317ac28131fdc23db39935",
+  "catalogSha256": "ecdf895a54474c1233d4df704ed89839c29038f4f7d8d69fbc6e11b4c840c2e5",
+  "databaseGroup": "multi"
+}

@@ -1,0 +1,11 @@
+{
+  "expected": "incomplete",
+  "passed": true,
+  "faults": {},
+  "maxSteps": 1,
+  "draftCount": 0,
+  "drafts": [],
+  "inputSha256": "07486f4f99c8bff515815c951854c78c55e1121460ba0ffc6b35c2102925b9bc",
+  "catalogSha256": "ecdf895a54474c1233d4df704ed89839c29038f4f7d8d69fbc6e11b4c840c2e5",
+  "databaseGroup": "step-limit"
+}

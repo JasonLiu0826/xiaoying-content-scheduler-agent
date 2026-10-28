@@ -1,0 +1,11 @@
+{
+  "expected": "needs_input",
+  "passed": true,
+  "faults": {},
+  "maxSteps": 16,
+  "draftCount": 0,
+  "drafts": [],
+  "inputSha256": "3b9a07181952717c2796384ad6a3e3dc918f28f7fa25f451ad64e06f01019bf0",
+  "catalogSha256": "ecdf895a54474c1233d4df704ed89839c29038f4f7d8d69fbc6e11b4c840c2e5",
+  "databaseGroup": "missing"
+}

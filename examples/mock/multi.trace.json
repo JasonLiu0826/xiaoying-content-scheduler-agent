@@ -1,0 +1,216 @@
+[
+  {
+    "step": 1,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "离线模拟：先获取素材事实"
+    },
+    "reason": "离线模拟：先获取素材事实",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M01",
+          "title": "城市夜景短片",
+          "description": "合成素材：记录城市夜景与剪辑技巧。",
+          "rights": "owned"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 2,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "离线模拟：检查素材完整性与规则风险"
+    },
+    "reason": "离线模拟：检查素材完整性与规则风险",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M01",
+        "status": "approved",
+        "missingFields": [],
+        "risks": []
+      }
+    },
+    "nextAction": "query_slots"
+  },
+  {
+    "step": 3,
+    "modelStep": 3,
+    "action": "query_slots",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "离线模拟：审核通过，查询真实占用情况"
+    },
+    "reason": "离线模拟：审核通过，查询真实占用情况",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M01",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "requestedAvailable": true,
+        "slots": [
+          {
+            "at": "2026-11-01T18:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T19:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T20:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T21:00:00+08:00",
+            "available": true
+          }
+        ]
+      }
+    },
+    "nextAction": "save_draft"
+  },
+  {
+    "step": 4,
+    "modelStep": 4,
+    "action": "save_draft",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "离线模拟：原要求时段可用，保存草稿",
+      "suggestedAt": "2026-11-01T18:00:00+08:00"
+    },
+    "reason": "离线模拟：原要求时段可用，保存草稿",
+    "observation": {
+      "ok": true,
+      "data": {
+        "draft": {
+          "id": "8a948795-805f-4639-a601-6e59eaeeb628",
+          "materialId": "M01",
+          "channel": "xiaohongshu",
+          "requestedAt": "2026-11-01T18:00:00+08:00",
+          "suggestedAt": "2026-11-01T18:00:00+08:00",
+          "status": "confirmed"
+        },
+        "duplicate": false
+      }
+    },
+    "nextAction": "read_material"
+  },
+  {
+    "step": 5,
+    "modelStep": 5,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M02",
+      "reason": "离线模拟：先获取素材事实"
+    },
+    "reason": "离线模拟：先获取素材事实",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M02",
+          "description": "合成素材：尚待完善授权与标题的信息。",
+          "rights": "unknown"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 6,
+    "modelStep": 6,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M02",
+      "reason": "离线模拟：检查素材完整性与规则风险"
+    },
+    "reason": "离线模拟：检查素材完整性与规则风险",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M02",
+        "status": "missing_info",
+        "missingFields": [
+          "title",
+          "rights"
+        ],
+        "risks": []
+      }
+    },
+    "nextAction": "read_material"
+  },
+  {
+    "step": 7,
+    "modelStep": 7,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M03",
+      "reason": "离线模拟：先获取素材事实"
+    },
+    "reason": "离线模拟：先获取素材事实",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M03",
+          "title": "效果宣传片",
+          "description": "合成素材：宣称本产品100%有效。",
+          "rights": "licensed"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 8,
+    "modelStep": 8,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M03",
+      "reason": "离线模拟：检查素材完整性与规则风险"
+    },
+    "reason": "离线模拟：检查素材完整性与规则风险",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M03",
+        "status": "blocked",
+        "missingFields": [],
+        "risks": [
+          {
+            "ruleId": "R01",
+            "reason": "不得使用未经证实的绝对效果承诺",
+            "severity": "block",
+            "evidence": "description: 合成素材：宣称本产品100%有效。"
+          }
+        ]
+      }
+    },
+    "nextAction": "finish"
+  },
+  {
+    "step": 9,
+    "modelStep": 9,
+    "action": "finish",
+    "arguments": {
+      "reason": "离线模拟：已处理所有素材，按实际保存回执、缺口或失败结束"
+    },
+    "reason": "离线模拟：已处理所有素材，按实际保存回执、缺口或失败结束",
+    "observation": {
+      "ok": true,
+      "data": {
+        "statusFromLedger": "blocked"
+      }
+    },
+    "nextAction": "end"
+  }
+]

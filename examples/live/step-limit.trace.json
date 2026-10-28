@@ -1,0 +1,24 @@
+[
+  {
+    "step": 1,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "读取 M01 素材事实与缺失字段，作为审核起点"
+    },
+    "reason": "读取 M01 素材事实与缺失字段，作为审核起点",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M01",
+          "title": "城市夜景短片",
+          "description": "合成素材：记录城市夜景与剪辑技巧。",
+          "rights": "owned"
+        }
+      }
+    },
+    "nextAction": "end"
+  }
+]

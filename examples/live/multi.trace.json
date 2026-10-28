@@ -1,0 +1,216 @@
+[
+  {
+    "step": 1,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "读取 M01 事实与缺失字段"
+    },
+    "reason": "读取 M01 事实与缺失字段",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M01",
+          "title": "城市夜景短片",
+          "description": "合成素材：记录城市夜景与剪辑技巧。",
+          "rights": "owned"
+        }
+      }
+    },
+    "nextAction": "read_material"
+  },
+  {
+    "step": 2,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M02",
+      "reason": "读取 M02 事实与缺失字段"
+    },
+    "reason": "读取 M02 事实与缺失字段",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M02",
+          "description": "合成素材：尚待完善授权与标题的信息。",
+          "rights": "unknown"
+        }
+      }
+    },
+    "nextAction": "read_material"
+  },
+  {
+    "step": 3,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M03",
+      "reason": "读取 M03 事实与缺失字段"
+    },
+    "reason": "读取 M03 事实与缺失字段",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M03",
+          "title": "效果宣传片",
+          "description": "合成素材：宣称本产品100%有效。",
+          "rights": "licensed"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 4,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "检查 M01 合规性"
+    },
+    "reason": "检查 M01 合规性",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M01",
+        "status": "approved",
+        "missingFields": [],
+        "risks": []
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 5,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M02",
+      "reason": "检查 M02 合规性"
+    },
+    "reason": "检查 M02 合规性",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M02",
+        "status": "missing_info",
+        "missingFields": [
+          "title",
+          "rights"
+        ],
+        "risks": []
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 6,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M03",
+      "reason": "检查 M03 合规性"
+    },
+    "reason": "检查 M03 合规性",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M03",
+        "status": "blocked",
+        "missingFields": [],
+        "risks": [
+          {
+            "ruleId": "R01",
+            "reason": "不得使用未经证实的绝对效果承诺",
+            "severity": "block",
+            "evidence": "description: 合成素材：宣称本产品100%有效。"
+          }
+        ]
+      }
+    },
+    "nextAction": "query_slots"
+  },
+  {
+    "step": 7,
+    "modelStep": 3,
+    "action": "query_slots",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "查询 M01 原时段 2026-11-01T18:00+08:00 及替代时段可用性"
+    },
+    "reason": "查询 M01 原时段 2026-11-01T18:00+08:00 及替代时段可用性",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M01",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "requestedAvailable": true,
+        "slots": [
+          {
+            "at": "2026-11-01T18:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T19:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T20:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T21:00:00+08:00",
+            "available": true
+          }
+        ]
+      }
+    },
+    "nextAction": "save_draft"
+  },
+  {
+    "step": 8,
+    "modelStep": 4,
+    "action": "save_draft",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "M01 审核通过且原时段可用，按原时间保存草稿",
+      "suggestedAt": "2026-11-01T18:00:00+08:00"
+    },
+    "reason": "M01 审核通过且原时段可用，按原时间保存草稿",
+    "observation": {
+      "ok": true,
+      "data": {
+        "draft": {
+          "id": "7e7a87fb-6d12-481f-abad-493477d552da",
+          "materialId": "M01",
+          "channel": "xiaohongshu",
+          "requestedAt": "2026-11-01T18:00:00+08:00",
+          "suggestedAt": "2026-11-01T18:00:00+08:00",
+          "status": "confirmed"
+        },
+        "duplicate": false
+      }
+    },
+    "nextAction": "finish"
+  },
+  {
+    "step": 9,
+    "modelStep": 5,
+    "action": "finish",
+    "arguments": {
+      "reason": "M01 审核通过、原时段可用，草稿已保存（confirmed）。M02 缺 title 与 rights，无法审核通过，需补齐资料。M03 被规则 R01 阻断（绝对效果承诺），停止处理。三项均未发布。"
+    },
+    "reason": "M01 审核通过、原时段可用，草稿已保存（confirmed）。M02 缺 title 与 rights，无法审核通过，需补齐资料。M03 被规则 R01 阻断（绝对效果承诺），停止处理。三项均未发布。",
+    "observation": {
+      "ok": true,
+      "data": {
+        "statusFromLedger": "blocked"
+      }
+    },
+    "nextAction": "end"
+  }
+]

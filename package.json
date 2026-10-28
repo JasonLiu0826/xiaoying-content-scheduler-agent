@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "node --env-file-if-exists=.env --import tsx src/cli.ts",
     "start": "node --env-file-if-exists=.env dist/src/cli.js",
+    "evaluate": "node --env-file-if-exists=.env --import tsx scripts/evaluate.ts",
     "test": "node --import tsx --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc -p tsconfig.build.json",

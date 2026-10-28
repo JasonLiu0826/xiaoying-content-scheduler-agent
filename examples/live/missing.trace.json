@@ -1,0 +1,62 @@
+[
+  {
+    "step": 1,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M02",
+      "reason": "读取 M02 素材事实与缺失字段，作为审核起点"
+    },
+    "reason": "读取 M02 素材事实与缺失字段，作为审核起点",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M02",
+          "description": "合成素材：尚待完善授权与标题的信息。",
+          "rights": "unknown"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 2,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M02",
+      "reason": "按规则检查 M02，确认授权与标题等字段是否齐备"
+    },
+    "reason": "按规则检查 M02，确认授权与标题等字段是否齐备",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M02",
+        "status": "missing_info",
+        "missingFields": [
+          "title",
+          "rights"
+        ],
+        "risks": []
+      }
+    },
+    "nextAction": "finish"
+  },
+  {
+    "step": 3,
+    "modelStep": 3,
+    "action": "finish",
+    "arguments": {
+      "reason": "M02 审核结果为 missing_info，缺少 title 与 rights（授权状态 unknown），资料不齐无法进入排期与保存草稿；未查询时段、未保存任何草稿。请补充标题与授权信息后重新提交。"
+    },
+    "reason": "M02 审核结果为 missing_info，缺少 title 与 rights（授权状态 unknown），资料不齐无法进入排期与保存草稿；未查询时段、未保存任何草稿。请补充标题与授权信息后重新提交。",
+    "observation": {
+      "ok": true,
+      "data": {
+        "statusFromLedger": "needs_input"
+      }
+    },
+    "nextAction": "end"
+  }
+]

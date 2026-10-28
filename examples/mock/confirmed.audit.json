@@ -1,0 +1,20 @@
+{
+  "expected": "completed",
+  "passed": true,
+  "faults": {},
+  "maxSteps": 16,
+  "draftCount": 1,
+  "drafts": [
+    {
+      "id": "b8285bf8-c7ef-4ad8-b4ca-be9ebb8165e8",
+      "materialId": "M01",
+      "channel": "douyin",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "suggestedAt": "2026-11-01T19:00:00+08:00",
+      "status": "confirmed"
+    }
+  ],
+  "inputSha256": "2067655daf5385af8530db145928ca4bd7b3fd9b1b28b324c85f025408209c27",
+  "catalogSha256": "ecdf895a54474c1233d4df704ed89839c29038f4f7d8d69fbc6e11b4c840c2e5",
+  "databaseGroup": "conflict"
+}

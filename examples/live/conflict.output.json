@@ -1,0 +1,39 @@
+{
+  "requestId": "conflict-001",
+  "taskStatus": "needs_confirmation",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "douyin",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "approved",
+      "risks": [],
+      "missingFields": [],
+      "suggestedAt": "2026-11-01T19:00:00+08:00",
+      "pendingConfirmations": [
+        "Confirm M01 on douyin: 2026-11-01T18:00:00+08:00 → 2026-11-01T19:00:00+08:00"
+      ],
+      "draft": {
+        "id": "eaf2ec78-91ca-48e9-9d42-c9c54e97a02d",
+        "materialId": "M01",
+        "channel": "douyin",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "suggestedAt": "2026-11-01T19:00:00+08:00",
+        "status": "pending_confirmation"
+      },
+      "saveStatus": "saved",
+      "status": "needs_confirmation",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "live",
+    "name": "deepseek-flash",
+    "steps": 5,
+    "httpAttempts": 5
+  },
+  "toolCalls": 5,
+  "startedAt": "2026-10-28T09:41:02.932Z",
+  "finishedAt": "2026-10-28T09:41:07.671Z"
+}
