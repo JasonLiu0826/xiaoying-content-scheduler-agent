@@ -165,9 +165,10 @@ export class SchedulingTools {
       if (this.check(state).status !== 'approved') throw new BusinessError('REVIEW_NOT_APPROVED', 'Material review must be approved before saving');
       if (!this.available(state, suggestedAt)) throw new BusinessError('SLOT_CONFLICT', 'Suggested channel/time is occupied; query slots again', true);
     });
-    state.result.draft = result.draft;
+    state.result.draft = structuredClone(result.draft);
     state.result.suggestedAt = result.draft.suggestedAt;
     state.result.saveStatus = 'saved';
+    state.noSlots = false;
     return result;
   }
 

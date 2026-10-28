@@ -311,3 +311,36 @@ test('confirmed draft replay cannot silently return a different unvalidated sugg
     assert.equal(store.list().length, 1);
   } finally { store.close(); }
 });
+
+test('mutating a returned save receipt cannot change ledger or pending confirmation facts', async () => {
+  const { store, tools } = setup();
+  try {
+    await prepare(tools);
+    const result = await tools.execute('save_draft', save(at19));
+    assert.ok(result.ok && 'draft' in result.data);
+    if (!result.ok || !('draft' in result.data)) return;
+    result.data.draft.status = 'confirmed';
+    result.data.draft.suggestedAt = at18;
+    const snapshot = tools.snapshot()[0]!;
+    assert.equal(snapshot.draft?.status, 'pending_confirmation');
+    assert.equal(snapshot.draft?.suggestedAt, at19);
+    assert.equal(snapshot.status, 'needs_confirmation');
+    assert.match(snapshot.pendingConfirmations[0] ?? '', /19:00:00/);
+    assert.equal(store.list()[0]?.status, 'pending_confirmation');
+  } finally { store.close(); }
+});
+
+test('successful live save clears stale no-slot outcome after a slot becomes free', async () => {
+  const cat = catalog();
+  cat.occupied = cat.candidateSlots.map(at => ({ materialId: 'occupied', channel: 'douyin', at }));
+  const { store, tools } = setup(request(), cat);
+  try {
+    await prepare(tools);
+    assert.equal(tools.snapshot()[0]?.status, 'needs_input');
+    cat.occupied = [];
+    assert.equal((await tools.execute('save_draft', save())).ok, true);
+    assert.equal(tools.snapshot()[0]?.status, 'draft_saved');
+    assert.equal(tools.snapshot()[0]?.saveStatus, 'saved');
+    assert.deepEqual(tools.snapshot()[0]?.pendingConfirmations, []);
+  } finally { store.close(); }
+});
