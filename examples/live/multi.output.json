@@ -1,0 +1,75 @@
+{
+  "requestId": "multi-001",
+  "taskStatus": "blocked",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "approved",
+      "risks": [],
+      "missingFields": [],
+      "suggestedAt": "2026-11-01T18:00:00+08:00",
+      "pendingConfirmations": [],
+      "draft": {
+        "id": "7e7a87fb-6d12-481f-abad-493477d552da",
+        "materialId": "M01",
+        "channel": "xiaohongshu",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "suggestedAt": "2026-11-01T18:00:00+08:00",
+        "status": "confirmed"
+      },
+      "saveStatus": "saved",
+      "status": "draft_saved",
+      "errors": []
+    },
+    {
+      "materialId": "M02",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T19:00:00+08:00",
+      "reviewStatus": "missing_info",
+      "risks": [],
+      "missingFields": [
+        "title",
+        "rights"
+      ],
+      "suggestedAt": null,
+      "pendingConfirmations": [],
+      "draft": null,
+      "saveStatus": "not_attempted",
+      "status": "needs_input",
+      "errors": []
+    },
+    {
+      "materialId": "M03",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T20:00:00+08:00",
+      "reviewStatus": "blocked",
+      "risks": [
+        {
+          "ruleId": "R01",
+          "reason": "不得使用未经证实的绝对效果承诺",
+          "severity": "block",
+          "evidence": "description: 合成素材：宣称本产品100%有效。"
+        }
+      ],
+      "missingFields": [],
+      "suggestedAt": null,
+      "pendingConfirmations": [],
+      "draft": null,
+      "saveStatus": "not_attempted",
+      "status": "blocked",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "live",
+    "name": "deepseek-flash",
+    "steps": 5,
+    "httpAttempts": 5
+  },
+  "toolCalls": 9,
+  "startedAt": "2026-10-28T09:41:30.433Z",
+  "finishedAt": "2026-10-28T09:41:36.925Z"
+}

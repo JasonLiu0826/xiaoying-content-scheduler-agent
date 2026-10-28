@@ -6,7 +6,7 @@
 
 输入和规则不可被模型修改。Agent 只根据模型生成的工具调用执行动作，将结构化工具结果写回消息，再由模型选择下一步。模型可以调用结束工具，但最终报告从业务账本生成，不能直接相信模型的自然语言成功声明。
 
-工具计划为 `read_material`、`check_rules`、`query_slots`、`save_draft`、`finish`。每个工具包含简短 `reason`，只记录可供评审的动作依据，不采集或要求内部思维过程。业务工具返回 `{ok, data}` 或 `{ok:false, error:{code,message,retryable}}`。
+提供 `read_material`、`check_rules`、`query_slots`、`save_draft`、`finish`。每个工具包含简短 `reason`，只记录可供评审的动作依据，不采集或要求内部思维过程。业务工具返回 `{ok, data}` 或 `{ok:false, error:{code,message,retryable}}`。
 
 ## 确认与冲突
 

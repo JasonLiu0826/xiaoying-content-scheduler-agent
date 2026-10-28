@@ -1,0 +1,67 @@
+[
+  {
+    "step": 1,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M03",
+      "reason": "读取 M03 素材事实与缺失字段，作为审核起点"
+    },
+    "reason": "读取 M03 素材事实与缺失字段，作为审核起点",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M03",
+          "title": "效果宣传片",
+          "description": "合成素材：宣称本产品100%有效。",
+          "rights": "licensed"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 2,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M03",
+      "reason": "素材宣称100%有效，需按规则检查是否构成绝对化用语风险"
+    },
+    "reason": "素材宣称100%有效，需按规则检查是否构成绝对化用语风险",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M03",
+        "status": "blocked",
+        "missingFields": [],
+        "risks": [
+          {
+            "ruleId": "R01",
+            "reason": "不得使用未经证实的绝对效果承诺",
+            "severity": "block",
+            "evidence": "description: 合成素材：宣称本产品100%有效。"
+          }
+        ]
+      }
+    },
+    "nextAction": "finish"
+  },
+  {
+    "step": 3,
+    "modelStep": 3,
+    "action": "finish",
+    "arguments": {
+      "reason": "M03 被规则 R01 阻断（描述含“100%有效”绝对效果承诺，severity=block），按流程停止处理该素材，未查询时段、未保存草稿。需修改文案去除绝对化效果承诺后重新提交。"
+    },
+    "reason": "M03 被规则 R01 阻断（描述含“100%有效”绝对效果承诺，severity=block），按流程停止处理该素材，未查询时段、未保存草稿。需修改文案去除绝对化效果承诺后重新提交。",
+    "observation": {
+      "ok": true,
+      "data": {
+        "statusFromLedger": "blocked"
+      }
+    },
+    "nextAction": "end"
+  }
+]

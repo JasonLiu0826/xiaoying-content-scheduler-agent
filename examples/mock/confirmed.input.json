@@ -1,0 +1,19 @@
+{
+  "requestId": "conflict-001",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "douyin",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "hardTime": true
+    }
+  ],
+  "confirmations": [
+    {
+      "materialId": "M01",
+      "channel": "douyin",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "suggestedAt": "2026-11-01T19:00:00+08:00"
+    }
+  ]
+}

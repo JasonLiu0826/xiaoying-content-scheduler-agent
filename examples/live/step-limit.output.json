@@ -1,0 +1,30 @@
+{
+  "requestId": "normal-001",
+  "taskStatus": "incomplete",
+  "stopReason": "MAX_STEPS",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "unchecked",
+      "risks": [],
+      "missingFields": [],
+      "suggestedAt": null,
+      "pendingConfirmations": [],
+      "draft": null,
+      "saveStatus": "not_attempted",
+      "status": "pending",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "live",
+    "name": "deepseek-flash",
+    "steps": 1,
+    "httpAttempts": 1
+  },
+  "toolCalls": 1,
+  "startedAt": "2026-10-28T09:41:41.116Z",
+  "finishedAt": "2026-10-28T09:41:42.147Z"
+}

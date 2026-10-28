@@ -1,0 +1,48 @@
+{
+  "materials": [
+    {
+      "id": "M01",
+      "title": "城市夜景短片",
+      "description": "合成素材：记录城市夜景与剪辑技巧。",
+      "rights": "owned"
+    },
+    {
+      "id": "M02",
+      "description": "合成素材：尚待完善授权与标题的信息。",
+      "rights": "unknown"
+    },
+    {
+      "id": "M03",
+      "title": "效果宣传片",
+      "description": "合成素材：宣称本产品100%有效。",
+      "rights": "licensed"
+    }
+  ],
+  "rules": [
+    {
+      "id": "R01",
+      "phrase": "100%有效",
+      "reason": "不得使用未经证实的绝对效果承诺",
+      "severity": "block"
+    },
+    {
+      "id": "R02",
+      "phrase": "行业第一",
+      "reason": "排名类宣传需要人工核验事实依据",
+      "severity": "review"
+    }
+  ],
+  "occupied": [
+    {
+      "materialId": "M00",
+      "channel": "douyin",
+      "at": "2026-11-01T19:00:00+08:00"
+    }
+  ],
+  "candidateSlots": [
+    "2026-11-01T18:00:00+08:00",
+    "2026-11-01T19:00:00+08:00",
+    "2026-11-01T20:00:00+08:00",
+    "2026-11-01T21:00:00+08:00"
+  ]
+}

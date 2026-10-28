@@ -1,0 +1,37 @@
+{
+  "requestId": "risk-001",
+  "taskStatus": "blocked",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M03",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "blocked",
+      "risks": [
+        {
+          "ruleId": "R01",
+          "reason": "不得使用未经证实的绝对效果承诺",
+          "severity": "block",
+          "evidence": "description: 合成素材：宣称本产品100%有效。"
+        }
+      ],
+      "missingFields": [],
+      "suggestedAt": null,
+      "pendingConfirmations": [],
+      "draft": null,
+      "saveStatus": "not_attempted",
+      "status": "blocked",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "mock",
+    "name": "deterministic-offline-mock",
+    "steps": 3,
+    "httpAttempts": null
+  },
+  "toolCalls": 3,
+  "startedAt": "2026-10-28T09:40:52.289Z",
+  "finishedAt": "2026-10-28T09:40:52.290Z"
+}

@@ -1,0 +1,33 @@
+{
+  "requestId": "missing-001",
+  "taskStatus": "needs_input",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M02",
+      "channel": "xiaohongshu",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "missing_info",
+      "risks": [],
+      "missingFields": [
+        "title",
+        "rights"
+      ],
+      "suggestedAt": null,
+      "pendingConfirmations": [],
+      "draft": null,
+      "saveStatus": "not_attempted",
+      "status": "needs_input",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "mock",
+    "name": "deterministic-offline-mock",
+    "steps": 3,
+    "httpAttempts": null
+  },
+  "toolCalls": 3,
+  "startedAt": "2026-10-28T09:40:52.259Z",
+  "finishedAt": "2026-10-28T09:40:52.259Z"
+}

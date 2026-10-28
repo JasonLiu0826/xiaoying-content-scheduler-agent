@@ -1,0 +1,32 @@
+{
+  "requestId": "conflict-001",
+  "taskStatus": "needs_input",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "douyin",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "approved",
+      "risks": [],
+      "missingFields": [],
+      "suggestedAt": null,
+      "pendingConfirmations": [
+        "No available catalog slot; provide an alternative scheduling window"
+      ],
+      "draft": null,
+      "saveStatus": "not_attempted",
+      "status": "needs_input",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "mock",
+    "name": "deterministic-offline-mock",
+    "steps": 4,
+    "httpAttempts": null
+  },
+  "toolCalls": 4,
+  "startedAt": "2026-10-28T09:40:52.400Z",
+  "finishedAt": "2026-10-28T09:40:52.400Z"
+}

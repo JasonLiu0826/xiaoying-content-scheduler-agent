@@ -1,0 +1,377 @@
+
+> xiaoying-content-scheduler-agent@0.1.0 check
+> npm run typecheck && npm test && npm run build
+
+
+> xiaoying-content-scheduler-agent@0.1.0 typecheck
+> tsc --noEmit
+
+
+> xiaoying-content-scheduler-agent@0.1.0 test
+> node --import tsx --test tests/*.test.ts
+
+TAP version 13
+# Subtest: feeds actual tool observations into the next model decision and derives success from ledger
+ok 1 - feeds actual tool observations into the next model decision and derives success from ledger
+  ---
+  duration_ms: 16.1907
+  type: 'test'
+  ...
+# Subtest: a model cannot claim success by finishing before unresolved items are processed
+ok 2 - a model cannot claim success by finishing before unresolved items are processed
+  ---
+  duration_ms: 1.5469
+  type: 'test'
+  ...
+# Subtest: unknown tools are rejected and endless tool choices hit a strict call cap
+ok 3 - unknown tools are rejected and endless tool choices hit a strict call cap
+  ---
+  duration_ms: 1.0589
+  type: 'test'
+  ...
+# Subtest: business failures survive the model finish and are never reported as completed
+ok 4 - business failures survive the model finish and are never reported as completed
+  ---
+  duration_ms: 0.6655
+  type: 'test'
+  ...
+# Subtest: invalid tool arguments return an observation instead of crashing the loop
+ok 5 - invalid tool arguments return an observation instead of crashing the loop
+  ---
+  duration_ms: 0.7869
+  type: 'test'
+  ...
+# Subtest: CLI runs offline without credentials, persists one draft across process replays and writes a report
+ok 6 - CLI runs offline without credentials, persists one draft across process replays and writes a report
+  ---
+  duration_ms: 1716.6978
+  type: 'test'
+  ...
+# Subtest: CLI uses explicit exit codes and structured statuses for missing data and save failure
+ok 7 - CLI uses explicit exit codes and structured statuses for missing data and save failure
+  ---
+  duration_ms: 1174.6504
+  type: 'test'
+  ...
+# Subtest: CLI rejects invalid flags and missing model credentials without leaking secrets
+ok 8 - CLI rejects invalid flags and missing model credentials without leaking secrets
+  ---
+  duration_ms: 1302.9481
+  type: 'test'
+  ...
+# Subtest: report file failure preserves the truthful durable business result on stdout
+ok 9 - report file failure preserves the truthful durable business result on stdout
+  ---
+  duration_ms: 727.9855
+  type: 'test'
+  ...
+# Subtest: CLI cannot overwrite an input through a hardlink or Windows case alias
+ok 10 - CLI cannot overwrite an input through a hardlink or Windows case alias
+  ---
+  duration_ms: 1216.1269
+  type: 'test'
+  ...
+# Subtest: request defaults hardTime and accepts timestamps with explicit offsets
+ok 11 - request defaults hardTime and accepts timestamps with explicit offsets
+  ---
+  duration_ms: 10.9504
+  type: 'test'
+  ...
+# Subtest: request rejects absent offsets, impossible dates, duplicate material IDs and unknown fields
+ok 12 - request rejects absent offsets, impossible dates, duplicate material IDs and unknown fields
+  ---
+  duration_ms: 2.9862
+  type: 'test'
+  ...
+# Subtest: confirmation and catalog timestamps receive the same strict validation
+ok 13 - confirmation and catalog timestamps receive the same strict validation
+  ---
+  duration_ms: 3.7438
+  type: 'test'
+  ...
+# Subtest: whole seconds and up to three fractional digits are represented without precision loss
+ok 14 - whole seconds and up to three fractional digits are represented without precision loss
+  ---
+  duration_ms: 0.581
+  type: 'test'
+  ...
+# Subtest: submillisecond precision is rejected in request, confirmation and every catalog timestamp
+ok 15 - submillisecond precision is rejected in request, confirmation and every catalog timestamp
+  ---
+  duration_ms: 4.4553
+  type: 'test'
+  ...
+# Subtest: assessment delivery documents and safe local configuration exist
+ok 16 - assessment delivery documents and safe local configuration exist
+  ---
+  duration_ms: 10.0161
+  type: 'test'
+  ...
+# (node:103840) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: offline end-to-end normal uses real tools and reports completed
+ok 17 - offline end-to-end normal uses real tools and reports completed
+  ---
+  duration_ms: 23.1775
+  type: 'test'
+  ...
+# Subtest: offline end-to-end conflict uses real tools and reports needs_confirmation
+ok 18 - offline end-to-end conflict uses real tools and reports needs_confirmation
+  ---
+  duration_ms: 6.4086
+  type: 'test'
+  ...
+# Subtest: offline end-to-end missing uses real tools and reports needs_input
+ok 19 - offline end-to-end missing uses real tools and reports needs_input
+  ---
+  duration_ms: 3.0661
+  type: 'test'
+  ...
+# Subtest: offline end-to-end risk uses real tools and reports blocked
+ok 20 - offline end-to-end risk uses real tools and reports blocked
+  ---
+  duration_ms: 3.7122
+  type: 'test'
+  ...
+# Subtest: offline end-to-end save-failure uses real tools and reports failed
+ok 21 - offline end-to-end save-failure uses real tools and reports failed
+  ---
+  duration_ms: 4.7531
+  type: 'test'
+  ...
+# Subtest: offline end-to-end multi uses real tools and reports blocked
+ok 22 - offline end-to-end multi uses real tools and reports blocked
+  ---
+  duration_ms: 36.733
+  type: 'test'
+  ...
+# Subtest: a pending draft can be confirmed on replay without creating a duplicate
+ok 23 - a pending draft can be confirmed on replay without creating a duplicate
+  ---
+  duration_ms: 12.0293
+  type: 'test'
+  ...
+# Subtest: sends tools and full observed history to configurable compatible endpoint
+ok 24 - sends tools and full observed history to configurable compatible endpoint
+  ---
+  duration_ms: 59.1072
+  type: 'test'
+  ...
+# Subtest: retries transient HTTP failure a finite number of times
+ok 25 - retries transient HTTP failure a finite number of times
+  ---
+  duration_ms: 8.5024
+  type: 'test'
+  ...
+# Subtest: authentication errors do not retry or leak provider bodies and credentials
+ok 26 - authentication errors do not retry or leak provider bodies and credentials
+  ---
+  duration_ms: 2.1547
+  type: 'test'
+  ...
+# Subtest: rejects truncated or malformed completions before any business execution
+ok 27 - rejects truncated or malformed completions before any business execution
+  ---
+  duration_ms: 4.2044
+  type: 'test'
+  ...
+# Subtest: times out a stalled provider and stops after the configured budget
+ok 28 - times out a stalled provider and stops after the configured budget
+  ---
+  duration_ms: 34.8957
+  type: 'test'
+  ...
+# Subtest: rejects an entire batch when any call contains invalid JSON arguments
+ok 29 - rejects an entire batch when any call contains invalid JSON arguments
+  ---
+  duration_ms: 1.3446
+  type: 'test'
+  ...
+# Subtest: disables credential-bearing HTTP redirects
+ok 30 - disables credential-bearing HTTP redirects
+  ---
+  duration_ms: 1.3102
+  type: 'test'
+  ...
+# Subtest: retries transient response-body disconnects but does not retry invalid JSON
+ok 31 - retries transient response-body disconnects but does not retry invalid JSON
+  ---
+  duration_ms: 14.5201
+  type: 'test'
+  ...
+# (node:63304) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: normal request saves approved original time with a durable receipt
+ok 32 - normal request saves approved original time with a durable receipt
+  ---
+  duration_ms: 23.3926
+  type: 'test'
+  ...
+# Subtest: missing metadata identifies fields and prevents saving
+ok 33 - missing metadata identifies fields and prevents saving
+  ---
+  duration_ms: 5.4556
+  type: 'test'
+  ...
+# Subtest: rule risks include matching evidence and rule ID and cannot be bypassed
+ok 34 - rule risks include matching evidence and rule ID and cannot be bypassed
+  ---
+  duration_ms: 3.4839
+  type: 'test'
+  ...
+# Subtest: unknown materials stay needs_input and cannot save
+ok 35 - unknown materials stay needs_input and cannot save
+  ---
+  duration_ms: 2.1711
+  type: 'test'
+  ...
+# Subtest: occupied original time gives an alternative pending confirmation without reserving it
+ok 36 - occupied original time gives an alternative pending confirmation without reserving it
+  ---
+  duration_ms: 4.4417
+  type: 'test'
+  ...
+# Subtest: exact user confirmation accepts equivalent timestamp instants
+ok 37 - exact user confirmation accepts equivalent timestamp instants
+  ---
+  duration_ms: 4.9471
+  type: 'test'
+  ...
+# Subtest: forged confirmation and rewritten channel/time arguments are rejected
+ok 38 - forged confirmation and rewritten channel/time arguments are rejected
+  ---
+  duration_ms: 3.3605
+  type: 'test'
+  ...
+# Subtest: save requires successful read, review and slot query
+ok 39 - save requires successful read, review and slot query
+  ---
+  duration_ms: 1.9368
+  type: 'test'
+  ...
+# Subtest: confirmation must bind item, channel, original and suggestion exactly
+ok 40 - confirmation must bind item, channel, original and suggestion exactly
+  ---
+  duration_ms: 9.8056
+  type: 'test'
+  ...
+# Subtest: non-hard time allows a confirmed alternative and off-catalog suggestions are rejected
+ok 41 - non-hard time allows a confirmed alternative and off-catalog suggestions are rejected
+  ---
+  duration_ms: 3.1577
+  type: 'test'
+  ...
+# Subtest: replay across reopen returns one stable ID and conflicting request input is rejected
+ok 42 - replay across reopen returns one stable ID and conflicting request input is rejected
+  ---
+  duration_ms: 50.7453
+  type: 'test'
+  ...
+# Subtest: confirmation upgrades pending draft in place and replay cannot downgrade it
+ok 43 - confirmation upgrades pending draft in place and replay cannot downgrade it
+  ---
+  duration_ms: 6.3644
+  type: 'test'
+  ...
+# Subtest: save fault inserts nothing and success recovery retains explicit failure history
+ok 44 - save fault inserts nothing and success recovery retains explicit failure history
+  ---
+  duration_ms: 2.8027
+  type: 'test'
+  ...
+# Subtest: save rechecks occupied catalog entries after query
+ok 45 - save rechecks occupied catalog entries after query
+  ---
+  duration_ms: 2.2236
+  type: 'test'
+  ...
+# Subtest: save rechecks review rules after earlier approval
+ok 46 - save rechecks review rules after earlier approval
+  ---
+  duration_ms: 2.2603
+  type: 'test'
+  ...
+# Subtest: confirmed slot uniqueness works across connections and canonical timestamps
+ok 47 - confirmed slot uniqueness works across connections and canonical timestamps
+  ---
+  duration_ms: 62.5279
+  type: 'test'
+  ...
+# Subtest: multiple items retain partial successful results
+ok 48 - multiple items retain partial successful results
+  ---
+  duration_ms: 26.0948
+  type: 'test'
+  ...
+# Subtest: unknown tool, unknown request item and invalid input return structured errors
+ok 49 - unknown tool, unknown request item and invalid input return structured errors
+  ---
+  duration_ms: 2.2155
+  type: 'test'
+  ...
+# Subtest: no available candidate slot is an explicit needs_input outcome and can recover after requery
+ok 50 - no available candidate slot is an explicit needs_input outcome and can recover after requery
+  ---
+  duration_ms: 2.6881
+  type: 'test'
+  ...
+# Subtest: user confirmation input cannot be changed by mutating the original request
+ok 51 - user confirmation input cannot be changed by mutating the original request
+  ---
+  duration_ms: 3.3294
+  type: 'test'
+  ...
+# Subtest: read/check/query failure is explicit and retry recovery preserves history
+ok 52 - read/check/query failure is explicit and retry recovery preserves history
+  ---
+  duration_ms: 8.1312
+  type: 'test'
+  ...
+# Subtest: manual-review rule cannot save and includes reason in pending confirmations
+ok 53 - manual-review rule cannot save and includes reason in pending confirmations
+  ---
+  duration_ms: 3.5346
+  type: 'test'
+  ...
+# Subtest: rechecking rules preserves outstanding consent on a pending draft
+ok 54 - rechecking rules preserves outstanding consent on a pending draft
+  ---
+  duration_ms: 3.6449
+  type: 'test'
+  ...
+# Subtest: database uniqueness constraint protects confirmed times even with a raw second writer
+ok 55 - database uniqueness constraint protects confirmed times even with a raw second writer
+  ---
+  duration_ms: 67.2663
+  type: 'test'
+  ...
+# Subtest: confirmed draft replay cannot silently return a different unvalidated suggestion
+ok 56 - confirmed draft replay cannot silently return a different unvalidated suggestion
+  ---
+  duration_ms: 3.5274
+  type: 'test'
+  ...
+# Subtest: mutating a returned save receipt cannot change ledger or pending confirmation facts
+ok 57 - mutating a returned save receipt cannot change ledger or pending confirmation facts
+  ---
+  duration_ms: 3.2097
+  type: 'test'
+  ...
+# Subtest: successful live save clears stale no-slot outcome after a slot becomes free
+ok 58 - successful live save clears stale no-slot outcome after a slot becomes free
+  ---
+  duration_ms: 2.2287
+  type: 'test'
+  ...
+1..58
+# tests 58
+# suites 0
+# pass 58
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6727.9633
+
+> xiaoying-content-scheduler-agent@0.1.0 build
+> tsc -p tsconfig.build.json

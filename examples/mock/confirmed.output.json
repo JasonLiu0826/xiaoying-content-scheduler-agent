@@ -1,0 +1,37 @@
+{
+  "requestId": "conflict-001",
+  "taskStatus": "completed",
+  "stopReason": "MODEL_FINISHED",
+  "items": [
+    {
+      "materialId": "M01",
+      "channel": "douyin",
+      "requestedAt": "2026-11-01T18:00:00+08:00",
+      "reviewStatus": "approved",
+      "risks": [],
+      "missingFields": [],
+      "suggestedAt": "2026-11-01T19:00:00+08:00",
+      "pendingConfirmations": [],
+      "draft": {
+        "id": "b8285bf8-c7ef-4ad8-b4ca-be9ebb8165e8",
+        "materialId": "M01",
+        "channel": "douyin",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "suggestedAt": "2026-11-01T19:00:00+08:00",
+        "status": "confirmed"
+      },
+      "saveStatus": "saved",
+      "status": "draft_saved",
+      "errors": []
+    }
+  ],
+  "model": {
+    "kind": "mock",
+    "name": "deterministic-offline-mock",
+    "steps": 5,
+    "httpAttempts": null
+  },
+  "toolCalls": 5,
+  "startedAt": "2026-10-28T09:40:52.172Z",
+  "finishedAt": "2026-10-28T09:40:52.182Z"
+}

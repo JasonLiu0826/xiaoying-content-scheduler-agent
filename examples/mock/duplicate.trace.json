@@ -1,0 +1,123 @@
+[
+  {
+    "step": 1,
+    "modelStep": 1,
+    "action": "read_material",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "离线模拟：先获取素材事实"
+    },
+    "reason": "离线模拟：先获取素材事实",
+    "observation": {
+      "ok": true,
+      "data": {
+        "material": {
+          "id": "M01",
+          "title": "城市夜景短片",
+          "description": "合成素材：记录城市夜景与剪辑技巧。",
+          "rights": "owned"
+        }
+      }
+    },
+    "nextAction": "check_rules"
+  },
+  {
+    "step": 2,
+    "modelStep": 2,
+    "action": "check_rules",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "离线模拟：检查素材完整性与规则风险"
+    },
+    "reason": "离线模拟：检查素材完整性与规则风险",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M01",
+        "status": "approved",
+        "missingFields": [],
+        "risks": []
+      }
+    },
+    "nextAction": "query_slots"
+  },
+  {
+    "step": 3,
+    "modelStep": 3,
+    "action": "query_slots",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "离线模拟：审核通过，查询真实占用情况"
+    },
+    "reason": "离线模拟：审核通过，查询真实占用情况",
+    "observation": {
+      "ok": true,
+      "data": {
+        "materialId": "M01",
+        "requestedAt": "2026-11-01T18:00:00+08:00",
+        "requestedAvailable": true,
+        "slots": [
+          {
+            "at": "2026-11-01T18:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T19:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T20:00:00+08:00",
+            "available": true
+          },
+          {
+            "at": "2026-11-01T21:00:00+08:00",
+            "available": true
+          }
+        ]
+      }
+    },
+    "nextAction": "save_draft"
+  },
+  {
+    "step": 4,
+    "modelStep": 4,
+    "action": "save_draft",
+    "arguments": {
+      "materialId": "M01",
+      "reason": "离线模拟：原要求时段可用，保存草稿",
+      "suggestedAt": "2026-11-01T18:00:00+08:00"
+    },
+    "reason": "离线模拟：原要求时段可用，保存草稿",
+    "observation": {
+      "ok": true,
+      "data": {
+        "draft": {
+          "id": "0299ba74-7253-420b-849c-4d8e2ef38b3b",
+          "materialId": "M01",
+          "channel": "xiaohongshu",
+          "requestedAt": "2026-11-01T18:00:00+08:00",
+          "suggestedAt": "2026-11-01T18:00:00+08:00",
+          "status": "confirmed"
+        },
+        "duplicate": true
+      }
+    },
+    "nextAction": "finish"
+  },
+  {
+    "step": 5,
+    "modelStep": 5,
+    "action": "finish",
+    "arguments": {
+      "reason": "离线模拟：已处理所有素材，按实际保存回执、缺口或失败结束"
+    },
+    "reason": "离线模拟：已处理所有素材，按实际保存回执、缺口或失败结束",
+    "observation": {
+      "ok": true,
+      "data": {
+        "statusFromLedger": "completed"
+      }
+    },
+    "nextAction": "end"
+  }
+]
