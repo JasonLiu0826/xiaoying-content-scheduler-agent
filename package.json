@@ -1,0 +1,25 @@
+{
+  "name": "xiaoying-content-scheduler-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Draft-only content review and scheduling agent for Xiaoying campus assessment",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --import tsx src/cli.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.13",
+    "tsx": "4.23.15",
+    "typescript": "5.8.3"
+  }
+}
